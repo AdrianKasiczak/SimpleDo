@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8005CC50204FCBF700B3A6E1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */; };
+		80212093205863D70095F8DE /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80212092205863D70095F8DE /* AddTaskController.swift */; };
 		80FF500B203B5AF500D0D565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF500A203B5AF500D0D565 /* AppDelegate.swift */; };
-		80FF500D203B5AF500D0D565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF500C203B5AF500D0D565 /* ViewController.swift */; };
-		80FF5010203B5AF500D0D565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FF500E203B5AF500D0D565 /* Main.storyboard */; };
 		80FF5012203B5AF500D0D565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FF5011203B5AF500D0D565 /* Assets.xcassets */; };
 		80FF5015203B5AF500D0D565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FF5013203B5AF500D0D565 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		80212092205863D70095F8DE /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		80FF5007203B5AF500D0D565 /* SimpleDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF500A203B5AF500D0D565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80FF500C203B5AF500D0D565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		80FF500F203B5AF500D0D565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80FF5011203B5AF500D0D565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80FF5014203B5AF500D0D565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80FF5016203B5AF500D0D565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				80FF500A203B5AF500D0D565 /* AppDelegate.swift */,
-				80FF500C203B5AF500D0D565 /* ViewController.swift */,
-				80FF500E203B5AF500D0D565 /* Main.storyboard */,
+				8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */,
+				80212092205863D70095F8DE /* AddTaskController.swift */,
 				80FF5011203B5AF500D0D565 /* Assets.xcassets */,
 				80FF5013203B5AF500D0D565 /* LaunchScreen.storyboard */,
 				80FF5016203B5AF500D0D565 /* Info.plist */,
@@ -125,7 +125,6 @@
 			files = (
 				80FF5015203B5AF500D0D565 /* LaunchScreen.storyboard in Resources */,
 				80FF5012203B5AF500D0D565 /* Assets.xcassets in Resources */,
-				80FF5010203B5AF500D0D565 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +135,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80FF500D203B5AF500D0D565 /* ViewController.swift in Sources */,
 				80FF500B203B5AF500D0D565 /* AppDelegate.swift in Sources */,
+				8005CC50204FCBF700B3A6E1 /* TaskViewController.swift in Sources */,
+				80212093205863D70095F8DE /* AddTaskController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80FF500E203B5AF500D0D565 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				80FF500F203B5AF500D0D565 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		80FF5013203B5AF500D0D565 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
