@@ -10,6 +10,7 @@ import UIKit
 
 class TaskViewController: UITableViewController {
 
+    let tasksArray = ["todo1","todo2","todo3","todo4"]
     let cellID = "cellID"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,31 @@ class TaskViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasksArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        
+        cell.textLabel?.text = tasksArray[indexPath.row]
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            completion(true)
+        }
+        action.image = #imageLiteral(resourceName: "trash")
+        action.backgroundColor = .red
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Complete") { (action, view, completion) in
+            completion(true)
+        }
+        action.image = #imageLiteral(resourceName: "check")
+        action.backgroundColor = .green
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
