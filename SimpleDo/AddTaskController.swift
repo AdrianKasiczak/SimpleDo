@@ -43,7 +43,10 @@ class AddTaskController: UIViewController {
     
     let doneButton: UIButton = {
        let btn = UIButton()
-        
+        btn.backgroundColor = .white
+        btn.setTitle("Done", for: .normal)
+        btn.setTitleColor(UIColor(red: 80/255, green: 200/255, blue: 120/255, alpha: 1), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
@@ -80,14 +83,14 @@ class AddTaskController: UIViewController {
         addTaskTextView.topAnchor.constraint(equalTo: addTaskLabel.bottomAnchor, constant: 10).isActive = true
         addTaskTextView.centerXAnchor.constraint(equalTo: addTaskLabel.centerXAnchor).isActive = true
         
-//        doneButton.widthAnchor
-//        doneButton.widthAnchor
-//        doneButton.widthAnchor
-//        doneButton.widthAnchor
+        doneButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        doneButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        doneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        doneButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        cancelButton.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        cancelButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2).isActive = true
         cancelButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cancelButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
         cancelButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }
