@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8005CC50204FCBF700B3A6E1 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */; };
 		80212093205863D70095F8DE /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80212092205863D70095F8DE /* AddTaskController.swift */; };
+		80ED73C120603FB200450E7E /* ToDos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80ED73BF20603FB200450E7E /* ToDos.xcdatamodeld */; };
 		80FF500B203B5AF500D0D565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF500A203B5AF500D0D565 /* AppDelegate.swift */; };
 		80FF5012203B5AF500D0D565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FF5011203B5AF500D0D565 /* Assets.xcassets */; };
 		80FF5015203B5AF500D0D565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FF5013203B5AF500D0D565 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		80212092205863D70095F8DE /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		80ED73C020603FB200450E7E /* ToDos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDos.xcdatamodel; sourceTree = "<group>"; };
 		80FF5007203B5AF500D0D565 /* SimpleDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF500A203B5AF500D0D565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FF5011203B5AF500D0D565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80ED73BD20603F7500450E7E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				80ED73BF20603FB200450E7E /* ToDos.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		80ED73BE20603F8100450E7E /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */,
+				80212092205863D70095F8DE /* AddTaskController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		80FF4FFE203B5AF500D0D565 = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				80FF500A203B5AF500D0D565 /* AppDelegate.swift */,
-				8005CC4F204FCBF700B3A6E1 /* TaskViewController.swift */,
-				80212092205863D70095F8DE /* AddTaskController.swift */,
+				80ED73BD20603F7500450E7E /* CoreData */,
+				80ED73BE20603F8100450E7E /* VC */,
 				80FF5011203B5AF500D0D565 /* Assets.xcassets */,
 				80FF5013203B5AF500D0D565 /* LaunchScreen.storyboard */,
 				80FF5016203B5AF500D0D565 /* Info.plist */,
@@ -138,6 +157,7 @@
 				80FF500B203B5AF500D0D565 /* AppDelegate.swift in Sources */,
 				8005CC50204FCBF700B3A6E1 /* TaskViewController.swift in Sources */,
 				80212093205863D70095F8DE /* AddTaskController.swift in Sources */,
+				80ED73C120603FB200450E7E /* ToDos.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +334,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80ED73BF20603FB200450E7E /* ToDos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80ED73C020603FB200450E7E /* ToDos.xcdatamodel */,
+			);
+			currentVersion = 80ED73C020603FB200450E7E /* ToDos.xcdatamodel */;
+			name = ToDos.xcdatamodeld;
+			path = ../../../../../../projects/Swift/iOS/SimpleDo/SimpleDo/CoreData/ToDos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 80FF4FFF203B5AF500D0D565 /* Project object */;
 }
