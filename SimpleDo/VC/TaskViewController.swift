@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskViewController: UITableViewController {
-
-    let tasksArray = ["todo1","todo2","todo3","todo4"]
+    
+    
+    var tasks: [ToDo] = []
     let cellID = "cellID"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,15 @@ class TaskViewController: UITableViewController {
         navigationItem.title = "Inbox"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTaskController))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Get Data from CoreData
+        getFetchedData()
+        
+        //Reload TableView
+        tableView.reloadData()
     }
     
     @objc func addTaskController() {
@@ -29,12 +42,15 @@ class TaskViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasksArray.count
+        return tasks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        cell.textLabel?.text = tasksArray[indexPath.row]
+        let task = tasks[indexPath.row]
+        
+        cell.textLabel?.text = task.title
+        
         return cell
     }
     
@@ -56,4 +72,29 @@ class TaskViewController: UITableViewController {
         action.backgroundColor = .green
         return UISwipeActionsConfiguration(actions: [action])
     }
+    
+    func getFetchedData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            tasks = try context.fetch(ToDo.fetchRequest())
+        } catch {
+            print("Fetching Error")
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

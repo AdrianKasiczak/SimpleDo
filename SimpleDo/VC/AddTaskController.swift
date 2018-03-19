@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class AddTaskController: UIViewController {
 
+    
     let emerald = UIColor(red: 80/255, green: 200/255, blue: 120/255, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +50,7 @@ class AddTaskController: UIViewController {
         btn.setTitle("Done", for: .normal)
         btn.setTitleColor(UIColor(red: 80/255, green: 200/255, blue: 120/255, alpha: 1), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(AddTaskAction), for: .touchUpInside)
         btn.layer.cornerRadius = 5
         return btn
     }()
@@ -57,13 +61,27 @@ class AddTaskController: UIViewController {
         btn.setTitle("Cancel", for: .normal)
         btn.setTitleColor(UIColor(red: 80/255, green: 200/255, blue: 120/255, alpha: 1), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(dismissAction), for: .touchUpInside)
         btn.layer.cornerRadius = 5
         return btn
     }()
     
+    @objc func AddTaskAction() {
+        
+        //Give acces to CoreData in AppDelegate
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let toDo = ToDo(context: context)
+        
+        toDo.title = addTaskTextField.text!
+        toDo.date = Date()
+        
+        //Save data to CoreData
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        dismiss(animated: true, completion: nil)
+    }
     
-    @objc func cancelButtonAction() {
+    @objc func dismissAction() {
         dismiss(animated: true, completion: nil)
         addTaskTextField.resignFirstResponder()
     }

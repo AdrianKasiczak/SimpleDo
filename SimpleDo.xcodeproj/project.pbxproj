@@ -342,8 +342,7 @@
 				80ED73C020603FB200450E7E /* ToDos.xcdatamodel */,
 			);
 			currentVersion = 80ED73C020603FB200450E7E /* ToDos.xcdatamodel */;
-			name = ToDos.xcdatamodeld;
-			path = ../../../../../../projects/Swift/iOS/SimpleDo/SimpleDo/CoreData/ToDos.xcdatamodeld;
+			path = ToDos.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
