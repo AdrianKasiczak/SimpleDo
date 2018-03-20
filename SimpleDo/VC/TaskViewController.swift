@@ -15,7 +15,6 @@ class TaskViewController: UITableViewController {
     var tasks: [ToDo] = []
     let cellID = "cellID"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,8 +55,15 @@ class TaskViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let task = self.tasks[indexPath.row]
             completion(true)
+            context.delete(task)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
+        
+        
+        
         action.image = #imageLiteral(resourceName: "trash")
         action.backgroundColor = .red
         
@@ -66,7 +72,12 @@ class TaskViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Complete") { (action, view, completion) in
+            let task = self.tasks[indexPath.row]
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             completion(true)
+            
+            context.delete(task)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
         action.image = #imageLiteral(resourceName: "check")
         action.backgroundColor = .green
